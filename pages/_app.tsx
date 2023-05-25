@@ -3,6 +3,9 @@ import * as React from 'react'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 
+import { SessionProvider } from "next-auth/react"
+import { Session } from "next-auth"
+
 import * as Fathom from 'fathom-client'
 // used for rendering equations (optional)
 import 'katex/dist/katex.min.css'
@@ -32,7 +35,7 @@ if (!isServer) {
   bootstrap()
 }
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps: {session, ...pageProps } }: AppProps<{session: Session}>) {
   const router = useRouter()
 
   React.useEffect(() => {
@@ -61,5 +64,9 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <SessionProvider session={session}>
+      <Component {...pageProps} />
+      </SessionProvider>
+  )
 }
