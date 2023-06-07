@@ -14,6 +14,11 @@ export const searchNotion = pMemoize(searchNotionImpl, {
 async function searchNotionImpl(
   params: types.SearchParams
 ): Promise<types.SearchResults> {
+  params.filter = {
+    value: 'database',
+    property: 'object',
+  }
+  console.log('param', params)
   return fetch(api.searchNotion, {
     method: 'POST',
     body: JSON.stringify(params),

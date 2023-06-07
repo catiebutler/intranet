@@ -17,8 +17,13 @@
   line-height: 1.65;
 }
 
+.notion-table-view {
+  width: 100%;
+  padding-left: 20px !important;
+}
+
 .index-page {
-  --notion-max-width: 900px;
+  --notion-max-width: 1800px;
 }
 
 .notion-text {
