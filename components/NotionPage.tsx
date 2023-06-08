@@ -274,7 +274,10 @@ export const NotionPage: React.FC<types.PageProps> = ({
         defaultPageCover={config.defaultPageCover}
         defaultPageCoverPosition={config.defaultPageCoverPosition}
         mapPageUrl={siteMapPageUrl}
-        mapImageUrl={mapImageUrl}
+        mapImageUrl={(url, block) => {
+          const signedUrl = recordMap.signed_urls?.[block.id];
+          return signedUrl || url;
+        }}
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
         footer={footer}
