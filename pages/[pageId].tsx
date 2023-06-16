@@ -7,7 +7,7 @@ import { getSiteMap } from '@/lib/get-site-map'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
 import { PageProps, Params } from '@/lib/types'
 
-export function avoidRateLimit(delay = 500) {
+export function avoidRateLimit(delay = 1500) {
   if (!process.env.IS_BUILD) {
     return
   }

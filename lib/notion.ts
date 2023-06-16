@@ -11,7 +11,7 @@ import {
 import { notion } from './notion-api'
 import { getPreviewImageMap } from './preview-images'
 
-export function avoidRateLimit(delay = 500) {
+export function avoidRateLimit(delay = 1500) {
   if (!process.env.IS_BUILD) {
     return
   }
