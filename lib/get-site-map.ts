@@ -9,7 +9,7 @@ import { notion } from './notion-api'
 
 const uuid = !!includeNotionIdInUrls
 
-export function avoidRateLimit(delay = 10000) {
+export function avoidRateLimit(delay = 5000) {
   if (!process.env.IS_BUILD) {
     return
   }
