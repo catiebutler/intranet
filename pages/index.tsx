@@ -4,7 +4,18 @@ import { NotionPage } from '@/components/NotionPage'
 import { domain } from '@/lib/config'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
 
+export function avoidRateLimit(delay = 500) {
+  if (!process.env.IS_BUILD) {
+    return
+  }
+
+  return new Promise((resolve) => {
+    setTimeout(resolve, delay)
+  })
+}
+
 export const getStaticProps = async () => {
+  await avoidRateLimit()
   try {
     const props = await resolveNotionPage(domain)
 
