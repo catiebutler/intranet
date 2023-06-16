@@ -4,7 +4,7 @@ import { NotionPage } from '@/components/NotionPage'
 import { domain } from '@/lib/config'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
 
-export function avoidRateLimit(delay = 1500) {
+export function avoidRateLimit(delay = 10000) {
   if (!process.env.IS_BUILD) {
     return
   }
