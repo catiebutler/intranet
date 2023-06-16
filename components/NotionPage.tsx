@@ -275,8 +275,18 @@ export const NotionPage: React.FC<types.PageProps> = ({
         defaultPageCoverPosition={config.defaultPageCoverPosition}
         mapPageUrl={siteMapPageUrl}
         mapImageUrl={(url, block) => {
-          const signedUrl = recordMap.signed_urls?.[block.id];
-          return signedUrl || url;
+          if (url.includes('https://s3')) {
+            const signedUrl = recordMap.signed_urls?.[block.id];
+            console.log('url', url)
+            console.log('signed', signedUrl)
+            return signedUrl || url;
+          } else if (url.includes('https://file.notion')) {
+            const signedUrl = url.replace("https://", "https://notion-image.aptp-account.workers.dev/")
+            return signedUrl || url;
+          } else {
+            const signedUrl = recordMap.signed_urls?.[block.id];
+            return signedUrl || url;
+          }
         }}
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
