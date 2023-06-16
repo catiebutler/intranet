@@ -1,5 +1,5 @@
 {
-  "name": "AlliancePTP Intranet",
+  "name": "allianceptp-intranet",
   "version": "2.0.0",
   "private": true,
   "description": "Intranet for AlliancePTP built on top of Notion",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "IS_BUILD=true next build",
     "start": "next start",
     "deploy": "vercel deploy",
     "deps": "run-s deps:*",

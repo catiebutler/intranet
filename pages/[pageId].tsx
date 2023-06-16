@@ -7,9 +7,20 @@ import { getSiteMap } from '@/lib/get-site-map'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
 import { PageProps, Params } from '@/lib/types'
 
+export function avoidRateLimit(delay = 500) {
+  if (!process.env.IS_BUILD) {
+    return
+  }
+
+  return new Promise((resolve) => {
+    setTimeout(resolve, delay)
+  })
+}
+
 export const getStaticProps: GetStaticProps<PageProps, Params> = async (
   context
 ) => {
+  await avoidRateLimit()
   const rawPageId = context.params.pageId as string
 
   try {
@@ -26,6 +37,7 @@ export const getStaticProps: GetStaticProps<PageProps, Params> = async (
 }
 
 export async function getStaticPaths() {
+  await avoidRateLimit
   if (isDev) {
     return {
       paths: [],
