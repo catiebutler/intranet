@@ -1,8 +1,8 @@
 {
-  "name": "AlliancePTP Intranet",
+  "name": "allianceptp-intranet",
   "version": "2.0.0",
   "private": true,
-  "description": "Intranet for AlliancePTP built on top of Notion",
+  "description": "The perfect starter kit for building beautiful websites with Next.js and Notion.",
   "author": "Addison Wanlass <hi@addison.codes>",
   "repository": "AlliancePTP/intranet",
   "license": "MIT",
