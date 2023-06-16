@@ -169,7 +169,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
   )
 
   // lite mode is for oembed
-  const isLiteMode = lite === 'true'
+  const isLiteMode = lite === 'false'
 
   const { isDarkMode } = useDarkMode()
 
@@ -274,7 +274,10 @@ export const NotionPage: React.FC<types.PageProps> = ({
         defaultPageCover={config.defaultPageCover}
         defaultPageCoverPosition={config.defaultPageCoverPosition}
         mapPageUrl={siteMapPageUrl}
-        mapImageUrl={mapImageUrl}
+        mapImageUrl={(url, block) => {
+          const signedUrl = recordMap.signed_urls?.[block.id];
+          return signedUrl || url;
+        }}
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
         footer={footer}

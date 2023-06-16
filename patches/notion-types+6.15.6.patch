@@ -1,0 +1,15 @@
+diff --git a/node_modules/notion-types/build/api.d.ts b/node_modules/notion-types/build/api.d.ts
+index 2bfc22d..fca3895 100644
+--- a/node_modules/notion-types/build/api.d.ts
++++ b/node_modules/notion-types/build/api.d.ts
+@@ -11,6 +11,10 @@ export interface SearchParams {
+         isNavigableOnly: boolean;
+         requireEditPermissions: boolean;
+     };
++    filter?: {
++        value: string;
++        property: string;
++    };
+     limit?: number;
+     searchSessionId?: string;
+ }

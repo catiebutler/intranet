@@ -2,7 +2,7 @@ import { siteConfig } from './lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: 'Company-Home-067c53f7a2d2496aa6dfcc0c02abe958',
+  rootNotionPageId: '067c53f7a2d2496aa6dfcc0c02abe958',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
@@ -11,7 +11,7 @@ export default siteConfig({
   // basic site info (required)
   name: 'Alliance Physical Therapy Partners Intranet',
   domain: 'intranet.allianceptp.com',
-  author: 'Addison.Codes',
+  author: 'Alliance PTP',
 
   // open graph metadata (optional)
   description: 'Alliance Physical Therapy Partners Intranet',
