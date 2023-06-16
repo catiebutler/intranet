@@ -11,7 +11,7 @@ export default siteConfig({
   // basic site info (required)
   name: 'Alliance Physical Therapy Partners Intranet',
   domain: 'intranet.allianceptp.com',
-  author: 'Addison.Codes',
+  author: 'Alliance PTP',
 
   // open graph metadata (optional)
   description: 'Alliance Physical Therapy Partners Intranet',
