@@ -11,8 +11,19 @@ import {
 import { notion } from './notion-api'
 import { getPreviewImageMap } from './preview-images'
 
+export function avoidRateLimit(delay = 500) {
+  if (!process.env.IS_BUILD) {
+    return
+  }
+
+  return new Promise((resolve) => {
+    setTimeout(resolve, delay)
+  })
+}
+
 const getNavigationLinkPages = pMemoize(
   async (): Promise<ExtendedRecordMap[]> => {
+    await avoidRateLimit()
     const navigationLinkPageIds = (navigationLinks || [])
       .map((link) => link.pageId)
       .filter(Boolean)
@@ -38,6 +49,7 @@ const getNavigationLinkPages = pMemoize(
 )
 
 export async function getPage(pageId: string): Promise<ExtendedRecordMap> {
+  await avoidRateLimit()
   let recordMap = await notion.getPage(pageId)
 
   if (navigationStyle !== 'default') {
