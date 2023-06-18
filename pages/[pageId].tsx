@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps<PageProps, Params> = async (
 }
 
 export async function getStaticPaths() {
-  await avoidRateLimit
+  await avoidRateLimit()
   if (isDev) {
     return {
       paths: [],
@@ -54,7 +54,7 @@ export async function getStaticPaths() {
       }
     })),
     // paths: [],
-    fallback: true
+    fallback: 'blocking'
   }
 
   console.log(staticPaths.paths)
