@@ -237,6 +237,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
     block
   )
 
+
+
   const socialDescription =
     getPageProperty<string>('Description', block, recordMap) ||
     config.description
@@ -254,6 +256,9 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
       {isLiteMode && <BodyClassName className='notion-lite' />}
       {isDarkMode && <BodyClassName className='dark-mode' />}
+
+      {(typeof window !== 'undefined') ?
+      isDarkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.add('light') : ''}
 
       <NotionRenderer
         bodyClassName={cs(
