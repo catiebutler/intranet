@@ -5,7 +5,7 @@ import * as types from 'notion-types'
 import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
 import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
 import cs from 'classnames'
-import { Breadcrumbs, useNotionContext } from 'react-notion-x'
+import { useNotionContext } from 'react-notion-x'
 import Search from '@/components/Search'
 
 import { navigationLinks } from '@/lib/config'
@@ -61,7 +61,7 @@ const ToggleThemeButton = () => {
 
 export const NotionPageHeader: React.FC<{
   block: types.CollectionViewPageBlock | types.PageBlock
-}> = ({ block }) => {
+}> = () => {
   const [searchResults, setSearchResults] = useState([])
   const { components, mapPageUrl } = useNotionContext()
 
@@ -176,7 +176,7 @@ export const NotionPageHeader: React.FC<{
   </nav>
 
 </header>
-  <Breadcrumbs block={block} rootOnly={false} />
+  {/* <Breadcrumbs block={block} rootOnly={false} /> */}
 </>
   )
 }
