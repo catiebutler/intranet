@@ -33,7 +33,7 @@ export default async (req, res) => {
     const results = response.results.map((page) => ({
       id: page.id,
       title: page.properties.Name.title[0].text.content,
-      description : page.properties.Description.rich_text[0] ? page.properties.Description.rich_text[0].plain_text : ''
+      // description : page.properties.Description.rich_text[0] ? page.properties.Description.rich_text[0].plain_text : ''
     }))
 
     res.status(200).json({ results })

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useState } from 'react'
 
 import { NotionPage } from '@/components/NotionPage'
 import Search from '@/components/Search'
@@ -31,10 +32,21 @@ export const getStaticProps = async () => {
 }
 
 export default function NotionDomainPage(props) {
+  const [searchResults, setSearchResults] = useState([])
+
   return (
     <>
-      <Search />
-      <NotionPage {...props} />
+      <Search setSearchResults={setSearchResults} />
+      {searchResults.length > 0 && (
+        <ul>
+          {searchResults.map((result) => (
+            <li key={result.id}>
+              <h2>{result.title}</h2>
+              <p>{result.description}</p>
+            </li>
+          ))}
+        </ul>
+      )}      <NotionPage {...props} />
     </>
   )
 }
