@@ -9,6 +9,17 @@ import { notion } from './notion-api'
 
 const uuid = !!includeNotionIdInUrls
 
+export function avoidRateLimit(delay = 5000) {
+  if (!process.env.IS_BUILD) {
+    return
+  }
+
+  return new Promise((resolve) => {
+    setTimeout(resolve, delay)
+  })
+}
+
+
 export async function getSiteMap(): Promise<types.SiteMap> {
   const partialSiteMap = await getAllPages(
     config.rootNotionPageId,
@@ -30,6 +41,7 @@ async function getAllPagesImpl(
   rootNotionSpaceId: string
 ): Promise<Partial<types.SiteMap>> {
   const getPage = async (pageId: string, ...args) => {
+    await avoidRateLimit()
     console.log('\nnotion getPage', uuidToId(pageId))
     return notion.getPage(pageId, ...args)
   }

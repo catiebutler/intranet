@@ -4,24 +4,24 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 module.exports = withBundleAnalyzer({
-  staticPageGenerationTimeout: 300,
+  staticPageGenerationTimeout: 1000,
   images: {
-    // domains: [
-    //   'www.notion.so',
-    //   'notion.so',
-    //   'file.notion.so',
-    //   'https://file.notion.so',
-    //   'images.unsplash.com',
-    //   'pbs.twimg.com',
-    //   'abs.twimg.com',
-    //   's3.us-west-2.amazonaws.com'
-    // ],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**",
-      },
+    domains: [
+      'www.notion.so',
+      'notion.so',
+      'file.notion.so',
+      'https://file.notion.so',
+      'images.unsplash.com',
+      'pbs.twimg.com',
+      'abs.twimg.com',
+      's3.us-west-2.amazonaws.com'
     ],
+    // remotePatterns: [
+    //   {
+    //     protocol: "https",
+    //     hostname: "**",
+    //   },
+    // ],
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
