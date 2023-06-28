@@ -3,6 +3,7 @@ import * as React from 'react'
 import { NotionPage } from '@/components/NotionPage'
 import { domain } from '@/lib/config'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
+import Table from '@/components/Table'
 
 export function avoidRateLimit(delay = 10000) {
   if (!process.env.IS_BUILD) {
@@ -32,6 +33,7 @@ export const getStaticProps = async () => {
 export default function NotionDomainPage(props) {
   return (
     <>
+    <Table />
       <NotionPage {...props} />
     </>
   )

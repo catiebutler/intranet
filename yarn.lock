@@ -509,6 +509,18 @@
   dependencies:
     "defer-to-connect" "^2.0.1"
 
+"@tanstack/react-table@^8.9.2":
+  "integrity" "sha512-Irvw4wqVF9hhuYzmNrlae4IKdlmgSyoRWnApSLebvYzqHoi5tEsYzBj6YPd0hX78aB/L+4w/jgK2eBQVpGfThQ=="
+  "resolved" "https://registry.npmjs.org/@tanstack/react-table/-/react-table-8.9.2.tgz"
+  "version" "8.9.2"
+  dependencies:
+    "@tanstack/table-core" "8.9.2"
+
+"@tanstack/table-core@8.9.2":
+  "integrity" "sha512-ajc0OF+karBAdaSz7OK09rCoAHB1XI1+wEhu+tDNMPc+XcO+dTlXXN/Vc0a8vym4kElvEjXEDd9c8Zfgt4bekA=="
+  "resolved" "https://registry.npmjs.org/@tanstack/table-core/-/table-core-8.9.2.tgz"
+  "version" "8.9.2"
+
 "@trivago/prettier-plugin-sort-imports@^3.3.1":
   "integrity" "sha512-ITGspeOlFnK1dwJVjqOguGW3Ja8hakxOPFudhpP0YfsDHT0yM0u4TU+62Vl83hCatnhB4+fYhlSZyiifUv4xSg=="
   "resolved" "https://registry.npmjs.org/@trivago/prettier-plugin-sort-imports/-/prettier-plugin-sort-imports-3.3.1.tgz"

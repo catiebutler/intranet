@@ -8,6 +8,7 @@ export default function SearchBar({ setSearchResults }) {
     // Call API with user's search query
     const res = await fetch(`api/search?q=${searchQuery}`)
     const json = await res.json()
+    console.log('json', json)
 
     // Update state with fetched data
     setSearchResults(json.results)

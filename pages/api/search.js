@@ -8,28 +8,41 @@ export default async (req, res) => {
 	const { q } = req.query
 
 	try {
-		const dbId = process.env.NOTION_DATABASE_ID
-		const response = await notion.databases.query({
-			database_id: dbId,
-			filter: {
-				and: [
-					{
-						property: 'Name',
-						title: {
-							contains: q,
-						},
-					},
-				],
-			},
-			sort: [
-				{
-					property: 'Name',
-					direction: 'ascending',
-				},
-			],
+		// const dbId = process.env.NOTION_DATABASE_ID
+		const response = await notion.search({
+			query: 'refer',
+      filter: {
+        value: 'database',
+        property: 'object'
+      },
+      sort: {
+        direction: 'ascending',
+        timestamp: 'last_edited_time'
+      },
     })
+		// const dbId = process.env.NOTION_DATABASE_ID
+		// const response = await notion.databases.query({
+		// 	database_id: dbId,
+		// 	filter: {
+		// 		and: [
+		// 			{
+		// 				property: 'Name',
+		// 				title: {
+		// 					contains: q,
+		// 				},
+		// 			},
+		// 		],
+		// 	},
+		// 	sort: [
+		// 		{
+		// 			property: 'Name',
+		// 			direction: 'ascending',
+		// 		},
+		// 	],
+    // })
 
     // Extract relevant data from Notion database and return it as JSON
+    console.log(response)
     const results = response.results.map((page) => ({
       id: page.id,
       title: page.properties.Name.title[0].text.content,
