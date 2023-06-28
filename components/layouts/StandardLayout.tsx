@@ -8,7 +8,6 @@ import cs from 'classnames'
 import { useNotionContext } from 'react-notion-x'
 import Search from '@/components/Search'
 
-import { navigationLinks } from '@/lib/config'
 import { useDarkMode } from '@/lib/use-dark-mode'
 import Logout from '@/components/Logout'
 
@@ -138,43 +137,8 @@ export const NotionPageHeader: React.FC<{
   </div>
 )}
     <Logout />
+    <ToggleThemeButton />
 
-<div className='notion-nav-header'>
-
-        <div className='notion-nav-header-rhs breadcrumbs'>
-          {navigationLinks
-            ?.map((link, index) => {
-              if (!link.pageId && !link.url) {
-                return null
-              }
-
-              if (link.pageId) {
-                return (
-                  <components.PageLink
-                    href={mapPageUrl(link.pageId)}
-                    key={index}
-                    className={cs(styles.navLink, 'breadcrumb', 'button')}
-                  >
-                    {link.title}
-                  </components.PageLink>
-                )
-              } else {
-                return (
-                  <components.Link
-                    href={link.url}
-                    key={index}
-                    className={cs(styles.navLink, 'breadcrumb', 'button')}
-                  >
-                    {link.title}
-                  </components.Link>
-                )
-              }
-            })
-            .filter(Boolean)}
-
-          <ToggleThemeButton />
-        </div>
-      </div>
       </div>
     </div>
   </nav>

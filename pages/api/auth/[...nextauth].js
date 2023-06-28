@@ -1,6 +1,15 @@
 import NextAuth from "next-auth"
 import AzureADProvider from "next-auth/providers/azure-ad";
 
+import { Client as FaunaClient } from "faunadb"
+import { FaunaAdapter } from "@next-auth/fauna-adapter"
+
+
+
+const client = new FaunaClient({
+  secret: "fnAFHjCI6eAATXsPYCS2jBGbcBb6qzlbAmeq8I-_",
+  domain: "db.us.fauna.com",
+})
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -22,6 +31,7 @@ export const authOptions = {
       return token;
     },
   },
+  adapter: FaunaAdapter(client)
 }
 
 export default NextAuth(authOptions)
