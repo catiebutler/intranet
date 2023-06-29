@@ -14,7 +14,8 @@ module.exports = withBundleAnalyzer({
       'images.unsplash.com',
       'pbs.twimg.com',
       'abs.twimg.com',
-      's3.us-west-2.amazonaws.com'
+      's3.us-west-2.amazonaws.com',
+      'intranet.allianceptp.com'
     ],
     // remotePatterns: [
     //   {
