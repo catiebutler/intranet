@@ -14,7 +14,7 @@ export function avoidRateLimit(delay = 10000) {
   })
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   await avoidRateLimit()
   try {
     const props = await resolveNotionPage(domain)

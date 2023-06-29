@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 
 import { NotionPage } from '@/components/NotionPage'
-import { domain } from '@/lib/config'
+import { domain, isDev } from '@/lib/config'
 // import { getSiteMap } from '@/lib/get-site-map'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
 import { PageProps, Params } from '@/lib/types'
@@ -17,7 +17,7 @@ export function avoidRateLimit(delay = 10000) {
   })
 }
 
-export const getServerSideProps: GetServerSideProps<PageProps, Params> = async (
+export const getStaticProps: GetStaticProps<PageProps, Params> = async (
   context
 ) => {
   await avoidRateLimit()
@@ -36,30 +36,30 @@ export const getServerSideProps: GetServerSideProps<PageProps, Params> = async (
   }
 }
 
-// export async function getStaticPaths() {
-//   await avoidRateLimit()
-//   if (isDev) {
-//     return {
-//       paths: [],
-//       fallback: true
-//     }
-//   }
+export async function getStaticPaths() {
+  await avoidRateLimit()
+  if (isDev) {
+    return {
+      paths: [],
+      fallback: true
+    }
+  }
 
-//   const siteMap = await getSiteMap()
+  // const siteMap = await getSiteMap()
 
-//   const staticPaths = {
-//     paths: Object.keys(siteMap.canonicalPageMap).map((pageId) => ({
-//       params: {
-//         pageId
-//       }
-//     })),
-//     // paths: [],
-//     fallback: 'blocking'
-//   }
+  const staticPaths = {
+    // paths: Object.keys(siteMap.canonicalPageMap).map((pageId) => ({
+    //   params: {
+    //     pageId
+    //   }
+    // })),
+    paths: [],
+    fallback: 'blocking'
+  }
 
-//   console.log(staticPaths.paths)
-//   return staticPaths
-// }
+  console.log(staticPaths.paths)
+  return staticPaths
+}
 
 export default function NotionDomainDynamicPage(props) {
   return <NotionPage {...props} />
