@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 
 import { NotionPage } from '@/components/NotionPage'
 import { domain, isDev } from '@/lib/config'
@@ -17,7 +17,7 @@ export function avoidRateLimit(delay = 10000) {
   })
 }
 
-export const getStaticProps: GetStaticProps<PageProps, Params> = async (
+export const getServerSideProps: GetServerSideProps<PageProps, Params> = async (
   context
 ) => {
   await avoidRateLimit()
