@@ -4,7 +4,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 module.exports = withBundleAnalyzer({
-  staticPageGenerationTimeout: 1000,
+  staticPageGenerationTimeout: 10000,
   images: {
     domains: [
       'www.notion.so',
@@ -14,7 +14,9 @@ module.exports = withBundleAnalyzer({
       'images.unsplash.com',
       'pbs.twimg.com',
       'abs.twimg.com',
-      's3.us-west-2.amazonaws.com'
+      's3.us-west-2.amazonaws.com',
+      'https://intranet.allianceptp.com',
+      'allianceptp.com'
     ],
     // remotePatterns: [
     //   {
