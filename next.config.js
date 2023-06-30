@@ -15,7 +15,8 @@ module.exports = withBundleAnalyzer({
       'pbs.twimg.com',
       'abs.twimg.com',
       's3.us-west-2.amazonaws.com',
-      'intranet.allianceptp.com'
+      'https://intranet.allianceptp.com',
+      'allianceptp.com'
     ],
     // remotePatterns: [
     //   {
