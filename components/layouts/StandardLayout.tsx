@@ -65,6 +65,7 @@ export const NotionPageHeader: React.FC<{
   const [searchResults, setSearchResults] = useState([])
   const { components, mapPageUrl } = useNotionContext()
 
+  console.log(components)
   // if (navigationStyle === 'default') {
   //   return <Header block={block} />
   // }

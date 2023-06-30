@@ -10,7 +10,7 @@ export default async (req, res) => {
 	try {
 		// const dbId = process.env.NOTION_DATABASE_ID
 		const response = await notion.search({
-			query: 'refer',
+			query: q,
       filter: {
         value: 'database',
         property: 'object'
