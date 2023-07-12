@@ -16,12 +16,12 @@ import * as config from '@/lib/config'
 import * as types from '@/lib/types'
 import { mapImageUrl } from '@/lib/map-image-url'
 import { getCanonicalPageUrl, mapPageUrl } from '@/lib/map-page-url'
-import { searchNotion } from '@/lib/search-notion'
-import { useDarkMode } from '@/lib/use-dark-mode'
+// import { searchNotion } from '@/lib/search-notion'
+// import { useDarkMode } from '@/lib/use-dark-mode'
 
-import { Footer } from './Footer'
+// import { Footer } from './Footer'
 import { Loading } from './Loading'
-import { NotionPageHeader } from './NotionPageHeader'
+// import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
@@ -100,18 +100,17 @@ const Tweet = ({ id }: { id: string }) => {
   return <TweetEmbed tweetId={id} />
 }
 
-const propertyLastEditedTimeValue = (
-  { block, pageHeader },
-  defaultFn: () => React.ReactNode
-) => {
-  if (pageHeader && block?.last_edited_time) {
-    return `Last updated ${formatDate(block?.last_edited_time, {
-      month: 'long'
-    })}`
-  }
-
-  return defaultFn()
-}
+// const propertyLastEditedTimeValue = (
+//   { block, pageHeader },
+//   defaultFn: () => React.ReactNode
+// ) => {
+//   if (pageHeader && block?.last_edited_time) {
+//     return `Last updated ${formatDate(block?.last_edited_time, {
+//       month: 'long'
+//     })}`
+//   }
+//   return defaultFn()
+// }
 
 const propertyDateValue = (
   { data, schema, pageHeader },
@@ -160,8 +159,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
       Pdf,
       Modal,
       Tweet,
-      Header: NotionPageHeader,
-      propertyLastEditedTimeValue,
+      // Header: NotionPageHeader,
+      // propertyLastEditedTimeValue,
       propertyTextValue,
       propertyDateValue
     }),
@@ -171,7 +170,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
   // lite mode is for oembed
   const isLiteMode = lite === 'false'
 
-  const { isDarkMode } = useDarkMode()
+  // const { isDarkMode } = useDarkMode()
 
   const siteMapPageUrl = React.useMemo(() => {
     const params: any = {}
@@ -199,7 +198,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
     [block, recordMap, isBlogPost]
   )
 
-  const footer = React.useMemo(() => <Footer />, [])
+  // const footer = React.useMemo(() => <Footer />, [])
 
   if (router.isFallback) {
     return <Loading />
@@ -254,18 +253,25 @@ export const NotionPage: React.FC<types.PageProps> = ({
         url={canonicalPageUrl}
       />
 
-      {isLiteMode && <BodyClassName className='notion-lite' />}
-      {isDarkMode && <BodyClassName className='dark-mode' />}
+      {/* {isLiteMode && <BodyClassName className='notion-lite' />}
+      {isDarkMode && <BodyClassName className='dark-mode' />} */}
 
-      {(typeof window !== 'undefined') ?
-      isDarkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.add('light') : ''}
+      {/* {(typeof window !== 'undefined') ?
+      isDarkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.add('light') : ''} */}
+
+      {
+      console.log(recordMap?.block[0])}
+{/*
+      {if (recordMap?.block[0].value.properties.title[0])
+
+      } */}
 
       <NotionRenderer
         bodyClassName={cs(
           styles.notion,
           pageId === site.rootNotionPageId && 'index-page'
         )}
-        darkMode={isDarkMode}
+        // darkMode={isDarkMode}
         components={components}
         recordMap={recordMap}
         rootPageId={site.rootNotionPageId}
@@ -293,9 +299,9 @@ export const NotionPage: React.FC<types.PageProps> = ({
             return signedUrl || url;
           }
         }}
-        searchNotion={config.isSearchEnabled ? searchNotion : null}
+        // searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
-        footer={footer}
+        // footer={footer}
       />
 
     </>

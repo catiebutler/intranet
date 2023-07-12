@@ -16,8 +16,8 @@ export default class MyDocument extends Document {
               sizes='32x32'
               href='favicon.png'
             />
-
             <link rel='manifest' href='/manifest.json' />
+            <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.3/dist/flowbite.min.css" />
           </Head>
 
           <body>

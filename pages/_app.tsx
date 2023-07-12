@@ -2,6 +2,8 @@
 import * as React from 'react'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import Script from 'next/script'
 
 import { SessionProvider } from "next-auth/react"
 import { Session } from "next-auth"
@@ -30,6 +32,9 @@ import {
   posthogConfig,
   posthogId
 } from '@/lib/config'
+import { StandardLayout } from '@/components/layouts/StandardLayout'
+import { DashboardLayout } from '@/components/layouts/DashboardLayout'
+
 
 if (!isServer) {
   bootstrap()
@@ -37,6 +42,9 @@ if (!isServer) {
 
 export default function App({ Component, pageProps: {session, ...pageProps } }: AppProps<{session: Session}>) {
   const router = useRouter()
+  useEffect(() => {
+    import('flowbite-react')
+  }, [])
 
   React.useEffect(() => {
     function onRouteChangeComplete() {
@@ -66,7 +74,15 @@ export default function App({ Component, pageProps: {session, ...pageProps } }: 
 
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
-      </SessionProvider>
+      <Script
+  src="https://unpkg.com/flowbite@1.3.3/dist/flowbite.js"
+  strategy="beforeInteractive"
+/>
+        <StandardLayout>
+          <DashboardLayout>
+            <Component {...pageProps} />
+          </DashboardLayout>
+        </StandardLayout>
+    </SessionProvider>
   )
 }

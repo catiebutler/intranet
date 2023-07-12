@@ -11,14 +11,10 @@ export default async (req, res) => {
 		// const dbId = process.env.NOTION_DATABASE_ID
 		const response = await notion.search({
 			query: q,
-      filter: {
-        value: 'database',
-        property: 'object'
-      },
-      sort: {
-        direction: 'ascending',
-        timestamp: 'last_edited_time'
-      },
+      sort:{
+        direction:"ascending",
+        timestamp:"last_edited_time"
+      }
     })
 		// const dbId = process.env.NOTION_DATABASE_ID
 		// const response = await notion.databases.query({
