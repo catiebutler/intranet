@@ -1,4 +1,4 @@
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, signIn } from "next-auth/react"
 import React from "react"
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
@@ -108,36 +108,36 @@ export default function Component() {
   )
 }
 
-const NotificationBellDropdown = function () {
-  return (
-    <Dropdown
-      arrowIcon={false}
-      inline
-      label={
-        <span className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-          <span className="sr-only">Notifications</span>
-          <HiBell className="text-2xl text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white " />
-        </span>
-      }
-    >
-      <div className="max-w-[24rem]">
-        <div className="block px-4 py-2 text-base font-medium text-center text-gray-700 rounded-t-xl bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-          Notifications
-        </div>
-        <div>
-test
+// const NotificationBellDropdown = function () {
+//   return (
+//     <Dropdown
+//       arrowIcon={false}
+//       inline
+//       label={
+//         <span className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+//           <span className="sr-only">Notifications</span>
+//           <HiBell className="text-2xl text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white " />
+//         </span>
+//       }
+//     >
+//       <div className="max-w-[24rem]">
+//         <div className="block px-4 py-2 text-base font-medium text-center text-gray-700 rounded-t-xl bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+//           Notifications
+//         </div>
+//         <div>
+// test
 
-        </div>
-        <a
-          href="#"
-          className="block py-2 text-base font-normal text-center text-gray-900 rounded-b-xl bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:text-white dark:hover:underline"
-        >
-          <div className="inline-flex items-center gap-x-2">
-            <HiEye className="w-6 h-6" />
-            <span>View all</span>
-          </div>
-        </a>
-      </div>
-    </Dropdown>
-  );
-};
+//         </div>
+//         <a
+//           href="#"
+//           className="block py-2 text-base font-normal text-center text-gray-900 rounded-b-xl bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:text-white dark:hover:underline"
+//         >
+//           <div className="inline-flex items-center gap-x-2">
+//             <HiEye className="w-6 h-6" />
+//             <span>View all</span>
+//           </div>
+//         </a>
+//       </div>
+//     </Dropdown>
+//   );
+// };

@@ -1,7 +1,7 @@
 import NextAuth from "next-auth"
 import AzureADProvider from "next-auth/providers/azure-ad";
 
-import { Client as FaunaClient } from "faunadb"
+// import { Client as FaunaClient } from "faunadb"
 
 export const authOptions = {
   // Configure one or more authentication providers

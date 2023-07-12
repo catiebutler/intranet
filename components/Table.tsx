@@ -48,8 +48,8 @@ type Person = {
 
 const columnHelper = createColumnHelper<Person>()
 
-const apikey = process.env.NOTION_API_KEY
-const dbid = process.env.NOTION_DATABASE_ID
+// const apikey = process.env.NOTION_API_KEY
+// const dbid = process.env.NOTION_DATABASE_ID
 
 
 const columns = [
