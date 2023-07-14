@@ -12,6 +12,10 @@
   --notion-header-height: 54px;
 }
 
+.notion-collection-page-properties {
+display: none;
+}
+
 .notion > * {
   padding: 0px;
 }
@@ -23,6 +27,10 @@
 
 .notion-header {
 display: none !important;
+}
+
+.notion-simple-table {
+width: 100%;
 }
 
 .notion-table-view {

@@ -6,7 +6,6 @@ const Sidebar = () => {
     <div className='col-span-1 row-span-2'>
       <h2 className='mt-4 mb-4 text-4xl font-extrabold dark:text-white'>Quick Links</h2>
       <p>Fast access to commonly used items</p>
-      <h2 className='mt-4 mb-4 text-4xl font-extrabold dark:text-white'>Pathways</h2>
       <div className="text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
   <a
     href="/60cdc13f-0c5a-47c5-9100-041516b142df"

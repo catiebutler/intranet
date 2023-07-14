@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-export default function PublicationForm() {
+export default function AnnouncementForm() {
   // const [value, setValue] = useState([])
+  const [imageFile, setImageFile] = useState(null);
 
   const {
     register,
@@ -14,21 +15,31 @@ export default function PublicationForm() {
   const router = useRouter()
 
   const createAnnouncement = async (data) => {
-    const { title, message, image, type } = data
-    try {
-      await fetch('api/createAnnouncement', {
-        method: 'POST',
-        body: JSON.stringify({ title, message, image, type }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      router.reload()
-    } catch (err) {
-      console.error(err)
-    }
-  }
+    const { title, message, type } = data;
 
+    // Create FormData object and append fields values
+    const formData = {
+      'title': title,
+      'message': message,
+      'type': type,
+    }
+     // Append uploaded image file if available
+     if (imageFile) {
+       formData.append('image', imageFile)
+     }
+
+     console.log(formData)
+
+     try {
+        await fetch('/api/createAnnouncement', {
+          method: 'POST',
+          body: formData,
+        });
+        router.reload();
+      } catch (err) {
+         console.error(err);
+      }
+  };
   // const updateSnippet = async (data) => {
   //     const { locationName, address, city, name, zip } = data;
   //     const id = snippet.id;
@@ -87,10 +98,10 @@ export default function PublicationForm() {
             Image
           </label>
           <input
-            {...register('image', { required: 'Name is required' })}
             aria-invalid={errors.publication ? 'true' : 'false'}
-            type="text"
-            className="w-full px-3 py-2 text-gray-700 bg-white border rounded outline-none"
+            type="file"
+            onChange={(e) => setImageFile(e.target.files[0])}
+            className="w-full"
           />
           {errors.image && (
             <p className="font-bold text-red-900">

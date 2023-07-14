@@ -6,8 +6,7 @@ const Announcenments = () => {
 
   return (
     <div className='col-span-3'>
-      <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white'>Announcenments</h1>
-      {session?.user?.name === 'Addison Wanlass' ? (
+      {session?.user?.name === ('Addison Wanlass' || 'Samantha Lewakowski' || 'Richard Leaver' || 'Anthony Placek' || 'Linda Kerrick' || 'Tiffany Warden' || 'Jami Farkas' || 'Benjamin Fedewa' || 'Terry Tyler' || 'Gretchen Walsh') ? (
         <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"><a href='/new-announcement'>New Announcement</a></button>
       ) : ''}
       <div className="container flex gap-4">

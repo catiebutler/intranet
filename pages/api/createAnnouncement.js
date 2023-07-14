@@ -7,6 +7,7 @@ export default async function handler(req, res) {
   }
   try {
     const createdAnnouncement = await createAnnouncement(title, message, image, type)
+    console.log('title', title)
     return res.status(200).json(createdAnnouncement)
   } catch (err) {
     console.error(err)

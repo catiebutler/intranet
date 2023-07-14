@@ -26,10 +26,13 @@ export const DashboardLayout: React.FC<React.PropsWithChildren> = ({ children })
   } else if (router.pathname === '/jobs') {
     return (
       <div className="container mx-auto">
-        <div className="container w-4/5">
+        <div className="container grid grid-cols-4 gap-6 pt-4 mx-auto">
+        <div className="col-span-3">
           {children}
+
         </div>
         <Sidebar />
+        </div>
       </div>
     )
   } else if (router.pathname === '/connect') {
