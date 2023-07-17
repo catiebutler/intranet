@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useState, useEffect, useRef } from 'react'
-import { useSession } from 'next-auth/react'
+// import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
 import Footer from '@/components/Footer'
@@ -69,7 +69,7 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
   const [showResults, setShowResults] = useState(false)
   const { components, mapPageUrl } = useNotionContext()
   console.log(components)
-  const { data: session } = useSession()
+  // const { data: session } = useSession()
 
   // Reference for click event listener
   const wrapperRef = useRef(null)
@@ -168,7 +168,7 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
   </div>
   <div
     id="mega-menu-full-image-dropdown"
-    className="mt-1 bg-white border-gray-200 shadow-sm border-y dark:bg-gray-800 dark:border-gray-600"
+    className="hidden mt-1 bg-white border-gray-200 shadow-sm border-y dark:bg-gray-800 dark:border-gray-600"
   >
     <div className="grid max-w-screen-xl px-4 py-5 mx-auto text-sm text-gray-500 dark:text-gray-400 md:grid-cols-3 md:px-6">
       <ul
@@ -260,15 +260,6 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
     </div>
 
       <div className="flex flex-col items-center justify-between md:flex-row">
-        <ul className="flex flex-col order-2 w-full mt-0 text-sm font-medium border border-gray-200 rounded-lg bg-gray-50 md:flex-row md:order-1 md:bg-white dark:bg-gray-800 dark:border-gray-700 dark:md:bg-gray-900 md:rounded-none md:border-0">
-
-          {/* TODO: Add role */}
-          {session?.user.name === 'admin' ? (
-          <li>
-          <a href="/jobs" className="block px-4 py-3 text-gray-500 rounded-lg dark:text-gray-400 hover:text-gray-900 dark:hover:text-white dark:hover:bg-gray-800 hover:bg-gray-50 dark:hover-bg-gray-800 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Users</a>
-        </li>
-          ) : ''}
-        </ul>
           <Search setSearchResults={setSearchResults} />
           {searchResults?.length > 0 && (
   <div className="absolute right-0 z-10 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg top-16">
