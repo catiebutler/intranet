@@ -4,8 +4,6 @@ import React from 'react'
 const SocialFeed = () => {
   return (
     <div className='col-span-1 row-span-2'>
-      <h2 className='mt-4 mb-4 text-4xl font-extrabold dark:text-white'>Social Feed</h2>
-      <p>Connect with us!</p>
       <blockquote
   className="instagram-media"
   data-instgrm-permalink="https://www.instagram.com/allianceptp/?utm_source=ig_embed&utm_campaign=loading"

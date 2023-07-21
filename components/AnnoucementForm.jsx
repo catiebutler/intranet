@@ -105,6 +105,7 @@ export default function AnnouncementForm() {
      plugins={'image'}
      value={submittedHTML}
      onEditorChange={(content) => setSubmittedHTML(content)}
+     valid_elements
    />
  </div>
         </div>

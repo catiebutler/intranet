@@ -214,22 +214,15 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
         </li>
         <li>
           <a
-            href="/a465a6ca-79d5-4213-8514-6eac0c5201a1"
-            className="hover:underline hover:text-blue-600 dark:hover:text-blue-500"
-          >
-            Clinical Operations
-          </a>
-        </li>
-      </ul>
-      <ul className="mb-4 space-y-4 md:mb-0">
-        <li>
-          <a
             href="/e7a11eef-9544-4dee-9893-23c29b4176b0"
             className="hover:underline hover:text-blue-600 dark:hover:text-blue-500"
           >
             Information Technology
           </a>
         </li>
+
+      </ul>
+      <ul className="mb-4 space-y-4 md:mb-0">
         <li>
           <a
             href="/f4f28e1f-4c45-453d-8fad-c175fffb049a"
@@ -249,18 +242,18 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
 
       </ul>
       <a
-        href="#"
+        href="/a465a6ca-79d5-4213-8514-6eac0c5201a1"
         className="p-8 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken"
         style={{ backgroundImage: "url(/docs/images/dashboard-overview.png)" }}
       >
         <p className="max-w-xl mb-5 font-extrabold leading-tight tracking-tight text-white">
-          Big callout here.
+          Clinical Operations
         </p>
         <button
           type="button"
           className="inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-center text-white border border-white rounded-lg hover:bg-white hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-700"
         >
-          Get started
+          Dig In
           <svg
             className="w-3 h-3 ml-2"
             aria-hidden="true"
