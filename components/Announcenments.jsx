@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'
 
 const Announcenments = () => {
   const { data: session } = useSession()
-  const [selectedTab, setSelectedTab] = useState('All')
+  // const [selectedTab, setSelectedTab] = useState('All')
 
   const fetcher = (url, queryParams = '?limit=100') =>
   fetch(`${url}${queryParams}`).then((res) => res.json())
@@ -13,12 +13,12 @@ const Announcenments = () => {
 console.log('session', data)
 
 // Filter announcements based on selectedTab
-const filteredAnnouncements =
-selectedTab === 'All'
-  ? data || []
-  : (data || []).filter(
-      (announcement) => announcement.type === selectedTab
-    )
+// const filteredAnnouncements =
+// selectedTab === 'All'
+//   ? data || []
+//   : (data || []).filter(
+//       (announcement) => announcement.type === selectedTab
+//     )
   return (
     <div className='col-span-3 mt-4'>
     <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
