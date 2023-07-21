@@ -2,10 +2,26 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { Editor } from '@tinymce/tinymce-react';
+import dynamic from 'next/dynamic';
+// eslint-disable-next-line
+/* eslint import/no-webpack-loader-syntax: off */
+// import tinymce from "tinymce/tinymce";
+
+const tinymce = dynamic(() => {
+  import("tinymce/plugins/image")
+})
+
+console.log(tinymce)
 
 export default function AnnouncementForm() {
   // const [value, setValue] = useState([])
   const [imageFile, setImageFile] = useState(null);
+  const [submittedHTML, setSubmittedHTML] = useState("");
+
+
+
+
 
   const {
     register,
@@ -15,26 +31,29 @@ export default function AnnouncementForm() {
   const router = useRouter()
 
   const createAnnouncement = async (data) => {
-    const { title, message, type } = data;
+    console.log(data)
 
-    // Create FormData object and append fields values
-    const formData = {
-      'title': title,
-      'message': message,
-      'type': type,
-    }
-     // Append uploaded image file if available
-     if (imageFile) {
-       formData.append('image', imageFile)
-     }
 
-     console.log(formData)
+    setSubmittedHTML(message);
+
+    const message = submittedHTML
+
+    const { title, image, type } = data;
+     console.log('img', imageFile)
 
      try {
         await fetch('/api/createAnnouncement', {
           method: 'POST',
-          body: formData,
-        });
+          body: JSON.stringify({
+            title,
+            message,
+            image,
+            type
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
         router.reload();
       } catch (err) {
          console.error(err);
@@ -65,7 +84,7 @@ export default function AnnouncementForm() {
             Title
           </label>
           <input
-            {...register('title', { required: 'Name is required' })}
+            {...register('title', { required: 'Title is required' })}
             aria-invalid={errors.publication ? 'true' : 'false'}
             type="text"
             className="w-full px-3 py-2 text-gray-700 bg-white border rounded outline-none"
@@ -80,22 +99,19 @@ export default function AnnouncementForm() {
           <label className="block mb-1 text-sm font-bold text-red-800">
             Message
           </label>
-          <input
-            {...register('message', { required: 'Name is required' })}
-            aria-invalid={errors.publication ? 'true' : 'false'}
-            type="text"
-            className="w-full px-3 py-2 text-gray-700 bg-white border rounded outline-none"
-          />
-          {errors.message && (
-            <p className="font-bold text-red-900">
-              {errors.message?.message}
-            </p>
-          )}
+          <div className="mb-4">
+   <Editor
+     apiKey="8169yfots1j4d13l4ok0m6zt6ojj66dxncet6r3reehrlye7"
+     plugins={'image'}
+     value={submittedHTML}
+     onEditorChange={(content) => setSubmittedHTML(content)}
+   />
+ </div>
         </div>
         <div className="mb-4">
         {/* TODO: Image upload */}
           <label className="block mb-1 text-sm font-bold text-red-800">
-            Image
+            Featured Image
           </label>
           <input
             aria-invalid={errors.publication ? 'true' : 'false'}

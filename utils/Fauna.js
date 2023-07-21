@@ -20,14 +20,14 @@ const getAnnouncements = async () => {
   return announcements
 }
 
-// const getLocationById = async (id) => {
-//   const location = await faunaClient.query(
-//     q.Get(q.Ref(q.Collection('locations'), id))
-//   )
-//   location.id = location.ref.id
-//   delete location.ref
-//   return location
-// }
+const getAnnouncementById = async (id) => {
+  const announcement = await faunaClient.query(
+    q.Get(q.Ref(q.Collection('announcements'), id))
+  )
+  announcement.id = announcement.ref.id
+  delete announcement.ref
+  return announcement
+}
 
 const createAnnouncement = async (
   title,
@@ -78,4 +78,5 @@ const createAnnouncement = async (
 module.exports = {
   getAnnouncements,
   createAnnouncement,
+  getAnnouncementById
 }
