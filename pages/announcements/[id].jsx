@@ -27,8 +27,8 @@ const Location = () => {
       </Head>
 
       <div className="max-w-lg p-8 mx-auto my-8 bg-white border-b shadow-md sm:rounded-lg dark:bg-gray-800/95 dark:border-gray-700">
-        <h1>{data.data.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: data.data.message}}></div>
+        <h1>{data?.data?.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: data?.data?.message}}></div>
 
       </div>
 
