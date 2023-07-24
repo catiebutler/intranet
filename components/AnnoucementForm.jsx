@@ -3,16 +3,16 @@ import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { Editor } from '@tinymce/tinymce-react';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 // eslint-disable-next-line
 /* eslint import/no-webpack-loader-syntax: off */
 // import tinymce from "tinymce/tinymce";
 
-const tinymce = dynamic(() => {
-  import("tinymce/plugins/image")
-})
+// const tinymce = dynamic(() => {
+//   import("tinymce/plugins/image")
+// })
 
-console.log(tinymce)
+// console.log(tinymce)
 
 export default function AnnouncementForm() {
   // const [value, setValue] = useState([])
@@ -102,10 +102,9 @@ export default function AnnouncementForm() {
           <div className="mb-4">
    <Editor
      apiKey="8169yfots1j4d13l4ok0m6zt6ojj66dxncet6r3reehrlye7"
-     plugins={'image'}
+    //  plugins={'image'}
      value={submittedHTML}
      onEditorChange={(content) => setSubmittedHTML(content)}
-     valid_elements
    />
  </div>
         </div>
