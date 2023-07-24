@@ -1,10 +1,10 @@
 import React from 'react'
-// import Announcenments from '@/components/Announcenments'
+import Announcenments from '@/components/Announcenments'
 
 const news = () => {
   return (
     <div>
-      {/* <Announcenments /> */}
+      <Announcenments />
     </div>
   )
 }
