@@ -3,6 +3,7 @@ import Announcements from '@/components/Announcenments'
 import Sidebar from '@/components/Sidebar'
 import SocialFeed from '@/components/SocialFeed'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 export const DashboardLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   const router = useRouter()
@@ -12,6 +13,9 @@ export const DashboardLayout: React.FC<React.PropsWithChildren> = ({ children })
   if (router.pathname === '/') {
     return (
       <div className='container mx-auto'>
+        <div className="mx-auto mt-6">
+          <Image src={'/homepage-banner.png'}  width={1200} height={300} alt={'Homepage banner'} />
+        </div>
         <div className="container grid grid-cols-4 gap-6 pt-4 mx-auto">
         <Announcements />
         <Sidebar />
