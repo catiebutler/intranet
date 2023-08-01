@@ -441,3 +441,5 @@ iframe.notion-asset-object-fit {
     background-color:transparent!important;
 }
 .notion-asset-wrapper img {width:40%; margin:auto!important;}
+
+.index-page .notion-asset-wrapper+.notion-text  {margin-bottom:4rem;}
