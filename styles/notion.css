@@ -16,6 +16,10 @@
   min-height: auto !important;
 }
 
+.notion-h-title {
+  font-family: 'UniversHeading' !important;
+}
+
 .notion-collection {
   width: auto !important;
   align-self: auto !important;

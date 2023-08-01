@@ -4,7 +4,7 @@ import React from 'react'
 const Sidebar = () => {
   return (
     <div className='col-span-1 row-span-2'>
-      <h2 className='mt-4 mb-4 text-4xl font-extrabold dark:text-white'>Quick Links</h2>
+      <h2 className='mt-4 mb-4 text-6xl font-extrabold dark:text-white font-universHeading'>Quick Links</h2>
       <p className='mb-4'>Fast access to commonly used items</p>
       <div className="text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
   <a
@@ -69,7 +69,7 @@ const Sidebar = () => {
     I need to get in touch with someone for a patient's billing concerns...
   </a>
 </div>
-      <h2 className='mt-4 mb-4 text-4xl font-extrabold dark:text-white'>Policies</h2>
+      <h2 className='mt-4 mb-4 text-6xl font-extrabold font-universHeading dark:text-white'>Policies</h2>
       <div className="text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
   <a
     href="/0bfdf96d-8df8-4757-a866-d0fe072d3a17"
