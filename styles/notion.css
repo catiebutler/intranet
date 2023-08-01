@@ -436,3 +436,7 @@ width: 100%;
 .notion-block-260baa77f1e1428b97fb14ac99c7c385 {
   display: none;
 }
+
+iframe.notion-asset-object-fit {
+    background-color:transparent!important;
+}
