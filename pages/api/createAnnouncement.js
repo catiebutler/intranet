@@ -2,7 +2,7 @@ import { createAnnouncement } from '../../utils/Fauna'
 
 export default async function handler(req, res) {
   const { title, message, image, type } = req.body
-  console.log('title', title)
+  console.log('message', message)
 
   if (req.method !== 'POST') {
     return res.status(405).json({ msg: 'Method not allowed' })

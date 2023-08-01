@@ -1,9 +1,9 @@
 import React from 'react'
-import Announcements from '@/components/Announcenments'
+import AnnouncementSection from '@/components/AnnouncementSection'
 import Sidebar from '@/components/Sidebar'
 import SocialFeed from '@/components/SocialFeed'
 import { useRouter } from 'next/router'
-import Image from 'next/image'
+import Ceo from '@/components/Ceo'
 
 export const DashboardLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   const router = useRouter()
@@ -13,13 +13,13 @@ export const DashboardLayout: React.FC<React.PropsWithChildren> = ({ children })
   if (router.pathname === '/') {
     return (
       <div className='container mx-auto'>
-        <div className="mx-auto mt-6">
+        {/* <div className="mx-auto mt-6">
           <Image src={'/homepage-banner.png'}  width={1200} height={300} alt={'Homepage banner'} />
-        </div>
-        <div className="container grid grid-cols-4 gap-6 pt-4 mx-auto">
-        <Announcements />
+        </div> */}
+        <div className="container grid grid-cols-4 gap-8 pt-4 mx-auto">
+        <AnnouncementSection />
         <Sidebar />
-        <div className="col-span-3 mt-6">
+        <div className="col-span-3 ">
         {children}
 
         </div>
@@ -42,11 +42,11 @@ export const DashboardLayout: React.FC<React.PropsWithChildren> = ({ children })
     </h5>
   </a>
   <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-    Lorem ipsum dolor sit amet.
+    Refer your friends and get rewarded!
   </p>
   <a
     href="/9118cb1ec3424cfc850d837bbe263684"
-    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-aptpblue hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-aptpblue dark:focus:ring-blue-800"
   >
     Read more
     <svg
@@ -81,6 +81,17 @@ export const DashboardLayout: React.FC<React.PropsWithChildren> = ({ children })
 
         </div>
         <SocialFeed />
+        </div>
+      </div>
+    )
+  } else if (router.pathname === '/news') {
+    return (
+      <div className="container mx-auto">
+        <div className="container grid grid-cols-4 gap-6 pt-4 mx-auto">
+          <div className="col-span-3">
+          {children}
+          </div>
+          <Ceo />
         </div>
       </div>
     )

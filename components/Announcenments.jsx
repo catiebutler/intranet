@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'
+import Newsletter from '@/components/Newsletter'
 
 const Announcenments = () => {
   const { data: session } = useSession()
@@ -10,7 +11,7 @@ const Announcenments = () => {
   fetch(`${url}${queryParams}`).then((res) => res.json())
   const { data } = useSWR('/api/announcements', fetcher)
 
-console.log('session', data)
+const newsletter = data?.find(a => a.type === 'newsletter')
 
 // Filter announcements based on selectedTab
 // const filteredAnnouncements =
@@ -21,7 +22,9 @@ console.log('session', data)
 //     )
   return (
     <div className='col-span-3 mt-4'>
-    <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
+    {newsletter ? (<Newsletter content={newsletter?.message} />) : ''}
+
+    {/* <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
     <ul
       className="flex flex-wrap -mb-px text-sm font-medium text-center"
       id="myTab"
@@ -81,26 +84,26 @@ console.log('session', data)
         </button>
       </li>
     </ul>
-  </div>
+  </div> */}
       {session?.user?.name === ('Addison Wanlass' || 'Samantha Lewakowski' || 'Richard Leaver' || 'Anthony Placek' || 'Linda Kerrick' || 'Tiffany Warden' || 'Jami Farkas' || 'Benjamin Fedewa' || 'Terry Tyler' || 'Gretchen Walsh') ? (
-        <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"><a href='/new-announcement'>New Announcement</a></button>
+        <button type="button" className="text-white bg-aptpblue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-aptpblue focus:outline-none dark:focus:ring-blue-800"><a href='/new-announcement'>New Announcement</a></button>
       ) : ''}
       <div className="container flex gap-4">
       {data?.map(announcement => (
         <div key={announcement.id} className="relative w-full max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
   <a href={`/announcements/${announcement.id}`}>
-    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+    <h5 className="mb-2 text-2xl font-bold tracking-tight drop-shadow-lg w-60 dark:text-white">
       {announcement.title}
     </h5>
   </a>
-  <span className="absolute top-[10px] right-[10px] w-12 text-center bg-blue-100 text-blue-800 text-xs font-medium px-[2.5px] py-[0.5rem] rounded-md dark:bg-blue-dark dark:text-blue-light mb-[1rem] uppercase">{announcement.type}</span>
+  <span className="absolute top-[10px] right-[10px] text-center bg-blue-100 text-blue-800 text-xs font-medium px-[2.5px] py-[0.5rem] rounded-md dark:bg-blue-dark dark:text-blue-light mb-[1rem] uppercase">{announcement.type}</span>
 
   <p className="mb-12 font-normal text-gray-700 dark:text-gray-400">
     <div dangerouslySetInnerHTML={{ __html: announcement.message.slice(0, 250)}}></div>
   </p>
   <a
     href={`/announcements/${announcement.id}`}
-    className="absolute bottom-[20px] mt-4 left-0 right-0 inline-flex items-center justify-center w-48 mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    className="absolute bottom-[20px] mt-4 left-0 right-0 inline-flex items-center justify-center w-48 mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-aptpblue rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-aptpblue dark:focus:ring-blue-800"
   >
     Read more
     <svg

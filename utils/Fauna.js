@@ -35,6 +35,7 @@ const createAnnouncement = async (
   image,
   type,
 ) => {
+  console.log('message', message)
   return await faunaClient.query(
     q.Create(q.Collection('announcements'), {
       data: {

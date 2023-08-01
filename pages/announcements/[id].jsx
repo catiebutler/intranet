@@ -86,7 +86,7 @@ const Announcement = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="max-w-lg p-8 mx-auto my-8 bg-white border-b shadow-md sm:rounded-lg dark:bg-gray-800/95 dark:border-gray-700">
+      <div className="p-8 mx-auto my-8 bg-white border-b shadow-md sm:rounded-lg dark:bg-gray-800/95 dark:border-gray-700">
         <h1 className=''>{data?.data?.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: data?.data?.message}} style={{style}}></div>
 
