@@ -440,3 +440,4 @@ width: 100%;
 iframe.notion-asset-object-fit {
     background-color:transparent!important;
 }
+.notion-asset-wrapper img {width:40%; margin:auto!important;}
