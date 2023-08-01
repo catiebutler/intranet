@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
 <footer className="p-4 shadow bg-aptpblue dark:bg-gray-900">
   <div className="w-full max-w-screen-xl p-4 mx-auto md:py-8">
-    <div className="flex items-center">
+    <div className="flex items-stretch content-center justify-center text-white">
       <svg
       xmlns="http://www.w3.org/2000/svg"
       className="w-5 h-5"
