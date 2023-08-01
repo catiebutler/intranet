@@ -94,11 +94,11 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
     <>
 <header className={"flex flex-col "}>
 
-  <nav className="bg-aptpblue border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-900 dark:border-gray-800 order-1">
+  <nav className=" border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-900 dark:border-gray-800 order-1">
     <div className="flex items-center justify-between">
       <div className="flex items-center justify-start flex-shrink-0">
         <a href="/" className="flex mr-6">
-          <img src="/aptp-logo-white.png" className="h-20 mr-3" alt="Alliance PTP Logo" />
+          <img src="/aptp-logo.png" className="h-20 mr-3" alt="Alliance PTP Logo" />
           {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Alliance PTP</span> */}
         </a>
       </div>

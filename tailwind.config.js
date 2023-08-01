@@ -8,7 +8,14 @@ module.exports = {
     './node_modules/flowbite-react/**/*.js'
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        universHeading: ["Univers-Heading", "heading"],
+        universSubheading: ["Univers-Subheading", "subheading"],
+        sans: ["Univers-Body", 'Arial', "sans-serif"],
+        body: ["Univers-Body", "sans-serif"],
+      }
+    },
     colors: {
       'aptpblue': '#0a7cba',
       'aptpred': '#ee4c24',
