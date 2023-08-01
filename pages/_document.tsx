@@ -18,6 +18,7 @@ export default class MyDocument extends Document {
             />
             <link rel='manifest' href='/manifest.json' />
             <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.3/dist/flowbite.min.css" />
+            <link rel="stylesheet" href="/public/fonts/Univers-Body.ttf" />
           </Head>
 
           <body>

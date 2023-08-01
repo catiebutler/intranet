@@ -456,6 +456,11 @@
   "resolved" "https://registry.npmjs.org/@next/env/-/env-12.3.1.tgz"
   "version" "12.3.1"
 
+"@next/font@^13.4.12":
+  "integrity" "sha512-w/ygNFuscvvFKFTMoIqhU8Kaq1wM6x4XEu9bwzJaj8G7aloH866TUPeCgiKf+M/ACpMKfRahQa06REcg6T3CyA=="
+  "resolved" "https://registry.npmjs.org/@next/font/-/font-13.4.12.tgz"
+  "version" "13.4.12"
+
 "@next/swc-linux-x64-gnu@12.3.1":
   "integrity" "sha512-JWEaMyvNrXuM3dyy9Pp5cFPuSSvG82+yABqsWugjWlvfmnlnx9HOQZY23bFq3cNghy5V/t0iPb6cffzRWylgsA=="
   "resolved" "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-12.3.1.tgz"

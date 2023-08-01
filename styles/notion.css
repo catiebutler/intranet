@@ -22,7 +22,7 @@
   }
 
 .notion-frame {
-  height: 600px;
+  height: 900px;
 }
 
 .notion-full-width {
@@ -51,7 +51,7 @@ display: none;
 }
 
 .index-page {
-  height: 600px !important;
+  height: 900px !important;
 }
 
 .notion-header {

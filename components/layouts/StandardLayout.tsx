@@ -94,11 +94,11 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
     <>
 <header className={"flex flex-col "}>
 
-  <nav className="bg-aptpblue border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-900 dark:border-gray-800 order-1">
+  <nav className=" border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-900 dark:border-gray-800 order-1">
     <div className="flex items-center justify-between">
       <div className="flex items-center justify-start flex-shrink-0">
         <a href="/" className="flex mr-6">
-          <img src="/aptp-logo-white.png" className="h-20 mr-3" alt="Alliance PTP Logo" />
+          <img src="/aptp-logo.png" className="h-20 mr-3" alt="Alliance PTP Logo" />
           {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Alliance PTP</span> */}
         </a>
       </div>
@@ -124,7 +124,7 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
         <li>
           <a
             href="/"
-            className="block py-2 pl-3 pr-4 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+            className="block py-2 pl-3 pr-4 font-bold text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
             aria-current="page"
           >
             Home
@@ -134,7 +134,7 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
           <button
             id="mega-menu-full-cta-image-button"
             data-collapse-toggle="mega-menu-full-image-dropdown"
-            className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-white border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-100 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+            className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-bold text-white border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-100 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
           >
             Our Teams{" "}
             <svg
@@ -155,13 +155,13 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
           </button>
         </li>
         <li>
-            <a href="/news" className="block py-2 pl-3 pr-4 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Company News</a>
+            <a href="/news" className="block py-2 pl-3 pr-4 font-bold text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Company News</a>
           </li>
           <li>
-            <a href="/connect" className="block py-2 pl-3 pr-4 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Stay Connected</a>
+            <a href="/connect" className="block py-2 pl-3 pr-4 font-bold text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Stay Connected</a>
           </li>
           <li>
-            <a href="/jobs" className="block py-2 pl-3 pr-4 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Open Jobs</a>
+            <a href="/jobs" className="block py-2 pl-3 pr-4 font-bold text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Open Jobs</a>
           </li>
       </ul>
       <div className="flex flex-col items-center justify-between md:flex-row">
@@ -193,7 +193,7 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
   >
     <div className="grid px-4 py-5 mx-auto text-sm text-gray-500 dark:text-gray-400 md:grid-cols-3 md:px-6">
       <ul
-        className="hidden mb-4 space-y-4 md:mb-0 md:block"
+        className="hidden pr-10 mb-4 space-y-4 md:mb-0 md:block"
         aria-labelledby="mega-menu-full-image-button"
       >
         <li>
@@ -203,6 +203,7 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
           >
             Front Office
           </a>
+          <p>View resources, forms and updates regarding our front office operations teams nationwide.</p>
         </li>
         <li>
           <a
@@ -218,7 +219,7 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
             href="/e7a11eef-9544-4dee-9893-23c29b4176b0"
             className="font-bold hover:underline hover:text-blue-600 dark:hover:text-blue-500"
           >
-            Information Technology
+            Information Technology (Coming Soon!)
           </a>
           <p>Connect with the help desk and view updates to our technology advances.</p>
         </li>
@@ -236,7 +237,7 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
             href="/f4f28e1f-4c45-453d-8fad-c175fffb049a"
             className="font-bold hover:underline hover:text-blue-600 dark:hover:text-blue-500"
           >
-            Compliance
+            Compliance (Coming Soon!)
           </a>
           <p>Maintain quality, compassionate, fiscally responsible level of care through these resources, policies and updates.</p>
         </li>
@@ -247,7 +248,7 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
             href="/6665d94f-9e3b-41b0-96b8-8737af9b7a6a"
             className="font-bold hover:underline hover:text-blue-600 dark:hover:text-blue-500"
           >
-            Revenue Cycle
+            Revenue Cycle (Coming Soon!)
           </a>
           <p>View resources, forms, and policies related to the Patient Services teams.</p>
         </li>
@@ -267,7 +268,7 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
           >
             Workers Compensation
           </a>
-          <p>o Connect with the help desk and view updates to our technology advances.</p>
+          <p>Connect with the help desk and view updates to our technology advances.</p>
         </li>
         <li>
           <a
@@ -284,7 +285,7 @@ export const StandardLayout: React.FC<React.PropsWithChildren> = ({ children }) 
           >
             Biocorrect (Coming Soon)
           </a>
-          <p>Biocorrect Custom Orthotics is a valued Alliance PTP partner. Learn more about how to refer to Biocorrect and what benefits are available for our team members.</p>
+          <p>Learn more about how to refer to Biocorrect and what benefits are available for our team members.</p>
         </li>
 
       </ul>
